@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <!-- Include the Chart.js library from a CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Include the style.css file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Create a div element to contain the chart -->
+  <header>
+    <h1>Progress Tracker by Eyad</h1>
+  </header>
+  <div class="container">
+    <!-- Create a canvas element to draw the chart -->
+    <canvas id="myChart"></canvas>
+
+    <!-- Create a div element to contain the input and buttons -->
+    <div class="controls">
+      <!-- Create an input element to enter a new value -->
+      <input id="input" type="number" placeholder="Add your progress here" />
+
+      <!-- Create a button element to push the new value to the data array -->
+      <button id="plus" onclick="pushValue()">+</button>
+
+      <!-- Create a button element to pop the last value from the data array -->
+      <button id="minus" onclick="popValue()">-</button>
+    </div>
+  </div>
+  <div id="timers" class="timers">
+    <div id="work">
+      <p>WORK</p>
+      <p id="w-timer">50:00</p>
+      <div class="timer-controls">
+        <button id="p1" onclick="timer(50 * 60, 'w-timer', 0)">&#9658;</button> <button id="r1"
+          onclick="reset(0);">&#10226;</button>
+      </div>
+    </div>
+    <div class="sep"></div>
+    <div id="rest">
+      <p>REST</p>
+      <p id="r-timer">10:00</p>
+      <div class="timer-controls">
+        <button id="p2" onclick="timer(10 * 60, 'r-timer', -1)">&#9658;</button> <button id="r2"
+          onclick="reset(-1);">&#10226;</button>
+      </div>
+    </div>
+  </div>
+  <div id="tiu" class="time-is-up">
+    <h2>Time's Up!</h2>
+    <button id="ok-popup" onclick="hidePopup()">OK</button>
+  </div>
+  <!-- Include the script.js file -->
+  <script src="index.js"></script>
+</body>
+
+</html>
